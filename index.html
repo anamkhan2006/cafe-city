@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breva Café — Artisan Coffee & Bites</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-logo">Breva<span>.</span>Café</div>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#featured">Specials</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reserve">Reserve</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" id="cartBtn">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     MOBILE MENU
+══════════════════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#menu"     onclick="closeMobile()">Menu</a>
+  <a href="#featured" onclick="closeMobile()">Specials</a>
+  <a href="#gallery"  onclick="closeMobile()">Gallery</a>
+  <a href="#reserve"  onclick="closeMobile()">Reserve</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Est. 2018 · Artisan Coffee</div>
+    <h1>Where Every Sip Tells a <em>Story</em></h1>
+    <p>Handcrafted beverages, fresh-baked pastries, and warm moments — all in one beautiful space. Your daily ritual, elevated.</p>
+    <div class="hero-ctas">
+      <a href="#menu"    class="btn-primary">Explore Menu</a>
+      <a href="#reserve" class="btn-outline">Book a Table</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">47+</div>
+        <div class="label">Signature drinks</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">12K+</div>
+        <div class="label">Happy customers</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">4.9★</div>
+        <div class="label">Average rating</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img
+      src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80"
+      alt="Barista crafting latte art"
+      loading="lazy"
+    >
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MARQUEE BANNER
+══════════════════════════════════════════ -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Artisan Espresso</span>
+    <span class="marquee-item">Fresh Pastries Daily</span>
+    <span class="marquee-item">Single Origin Beans</span>
+    <span class="marquee-item">Seasonal Specials</span>
+    <span class="marquee-item">Vegan Friendly</span>
+    <span class="marquee-item">Free WiFi</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="marquee-item">Artisan Espresso</span>
+    <span class="marquee-item">Fresh Pastries Daily</span>
+    <span class="marquee-item">Single Origin Beans</span>
+    <span class="marquee-item">Seasonal Specials</span>
+    <span class="marquee-item">Vegan Friendly</span>
+    <span class="marquee-item">Free WiFi</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ABOUT STRIP
+══════════════════════════════════════════ -->
+<div class="about-strip">
+  <div class="about-card fade-up">
+    <div class="about-icon">☕</div>
+    <h3>Ethically Sourced</h3>
+    <p>Our beans come directly from sustainable farms in Ethiopia, Colombia, and Guatemala — ensuring fair wages and exceptional quality.</p>
+  </div>
+  <div class="about-card fade-up" style="transition-delay: 0.1s">
+    <div class="about-icon">🥐</div>
+    <h3>Baked Fresh Daily</h3>
+    <p>Every croissant, muffin, and tart is crafted in our kitchen each morning using local organic flour and seasonal produce.</p>
+  </div>
+  <div class="about-card fade-up" style="transition-delay: 0.2s">
+    <div class="about-icon">🌿</div>
+    <h3>Eco Conscious</h3>
+    <p>From compostable packaging to zero-waste operations, we're committed to serving you coffee that's good for the planet too.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     MENU SECTION
+══════════════════════════════════════════ -->
+<section id="menu">
+  <div class="section-header fade-up">
+    <div class="section-tag">Our Menu</div>
+    <h2>Crafted with Love,<br>Served with Care</h2>
+    <p>From classic espresso drinks to seasonal specialties, there's something for every palate.</p>
+  </div>
+
+  <!-- Category Filter Tabs -->
+  <div class="category-tabs" id="categoryTabs">
+    <button class="tab active" data-cat="all">All Items</button>
+    <button class="tab" data-cat="coffee">Coffee</button>
+    <button class="tab" data-cat="tea">Tea &amp; Matcha</button>
+    <button class="tab" data-cat="food">Food</button>
+    <button class="tab" data-cat="pastry">Pastries</button>
+    <button class="tab" data-cat="cold">Cold Drinks</button>
+  </div>
+
+  <!-- Cards injected by script.js -->
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FEATURED / SEASONAL SPECIALS
+══════════════════════════════════════════ -->
+<section class="featured" id="featured">
+  <div class="section-header fade-up">
+    <div class="section-tag">Chef's Picks</div>
+    <h2>Seasonal Specials</h2>
+    <p>Limited offerings crafted with the finest seasonal ingredients. Try them before they're gone.</p>
+  </div>
+
+  <div class="featured-grid fade-up">
+    <div class="featured-main">
+      <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=700&q=80" alt="Signature Rose Latte" loading="lazy">
+      <div class="featured-overlay">
+        <h3>Signature Rose Latte</h3>
+        <p>Rosewater · Oat milk · Cardamom · Espresso</p>
+      </div>
+    </div>
+    <div class="featured-sm">
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80" alt="Sourdough Loaf" loading="lazy">
+      <div class="featured-overlay">
+        <h3>Sourdough Loaf</h3>
+        <p>Baked fresh every morning</p>
+      </div>
+    </div>
+    <div class="featured-sm">
+      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=80" alt="Butter Croissant" loading="lazy">
+      <div class="featured-overlay">
+        <h3>Butter Croissant</h3>
+        <p>Flaky · Golden · Perfect</p>
+      </div>
+    </div>
+    <div class="featured-sm">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&q=80" alt="Iced Honey Brew" loading="lazy">
+      <div class="featured-overlay">
+        <h3>Iced Honey Brew</h3>
+        <p>Cold brew · Local honey · Vanilla</p>
+      </div>
+    </div>
+    <div class="featured-sm">
+      <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&q=80" alt="Matcha Tiramisu" loading="lazy">
+      <div class="featured-overlay">
+        <h3>Matcha Tiramisu</h3>
+        <p>Ceremonial grade · Mascarpone</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     GALLERY
+══════════════════════════════════════════ -->
+<section class="gallery" id="gallery">
+  <div class="section-header fade-up">
+    <div class="section-tag">Our Space</div>
+    <h2>A Place to Linger</h2>
+    <p>Cozy corners, natural light, and the scent of fresh coffee — welcome to your new favourite spot.</p>
+  </div>
+  <div class="gallery-grid fade-up">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Café interior" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&q=80" alt="Coffee beans" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?w=500&q=80" alt="Latte art" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Café seating" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1483137140003-ae073b395549?w=500&q=80" alt="Pastry display" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section class="testimonials">
+  <div class="section-header fade-up">
+    <div class="section-tag">Reviews</div>
+    <h2>Loved by Our Guests</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The rose latte is absolutely divine. I come in every single morning before work — it's become non-negotiable. The atmosphere is warm and the staff always remember my order."</p>
+      <div class="t-author">
+        <img class="t-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Priya S." loading="lazy">
+        <div>
+          <div class="t-name">Priya S.</div>
+          <div class="t-role">Architect · Regular since 2021</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay: 0.1s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"Best croissants I've had outside of Paris. Flaky, buttery, and always perfectly golden. The cold brew is also sensational — smooth with no bitterness at all."</p>
+      <div class="t-author">
+        <img class="t-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Marco V." loading="lazy">
+        <div>
+          <div class="t-name">Marco V.</div>
+          <div class="t-role">Food Blogger</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up" style="transition-delay: 0.2s">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-text">"The perfect work-from-café spot. Reliable WiFi, comfy seats, and the kitchen keeps me fuelled all day. The avocado toast is genuinely the best in the city."</p>
+      <div class="t-author">
+        <img class="t-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Sarah K." loading="lazy">
+        <div>
+          <div class="t-name">Sarah K.</div>
+          <div class="t-role">UX Designer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RESERVATION SECTION
+══════════════════════════════════════════ -->
+<section id="reserve">
+  <div class="reserve-inner">
+    <!-- Left info -->
+    <div class="reserve-left fade-up">
+      <div class="section-tag">Book a Table</div>
+      <h2>Reserve Your Perfect Moment</h2>
+      <p>Whether it's a solo morning ritual, a business brunch, or a special celebration — we'll have your table ready.</p>
+      <div class="reserve-info">
+        <div class="reserve-info-item">
+          <div class="ri-icon">🕐</div>
+          <div>
+            <div class="ri-label">Opening Hours</div>
+            <div class="ri-value">Mon–Fri: 7am – 9pm</div>
+          </div>
+        </div>
+        <div class="reserve-info-item">
+          <div class="ri-icon">📍</div>
+          <div>
+            <div class="ri-label">Location</div>
+            <div class="ri-value">12 Blossom Lane, Colaba, Mumbai</div>
+          </div>
+        </div>
+        <div class="reserve-info-item">
+          <div class="ri-icon">📞</div>
+          <div>
+            <div class="ri-label">Phone</div>
+            <div class="ri-value">+91 98765 43210</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right form -->
+    <div class="reserve-form fade-up" style="transition-delay: 0.15s">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="fname" placeholder="Ananya">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lname" placeholder="Sharma">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="rdate">
+        </div>
+        <div class="form-group">
+          <label>Time</label>
+          <select id="rtime">
+            <option>7:00 AM</option>  <option>8:00 AM</option>
+            <option>9:00 AM</option>  <option>10:00 AM</option>
+            <option>11:00 AM</option> <option>12:00 PM</option>
+            <option>1:00 PM</option>  <option>2:00 PM</option>
+            <option>3:00 PM</option>  <option>4:00 PM</option>
+            <option>5:00 PM</option>  <option>6:00 PM</option>
+            <option>7:00 PM</option>  <option>8:00 PM</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Guests</label>
+          <select id="rguests">
+            <option>1 person</option>   <option>2 people</option>
+            <option>3 people</option>   <option>4 people</option>
+            <option>5–6 people</option> <option>7+ people</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="remail" placeholder="you@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Special Requests</label>
+        <textarea id="rnotes" placeholder="Dietary restrictions, occasion, seating preferences…"></textarea>
+      </div>
+      <button class="submit-btn" onclick="submitReservation()">Confirm Reservation ✓</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Breva<span>.</span>Café</div>
+      <p>A cozy corner of the world where great coffee, beautiful food, and warm company come together.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#menu">Espresso Drinks</a></li>
+        <li><a href="#menu">Cold Brews</a></li>
+        <li><a href="#menu">Teas &amp; Matcha</a></li>
+        <li><a href="#menu">Pastries</a></li>
+        <li><a href="#menu">All Day Food</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reserve">Reservations</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">Catering</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Breva Café. All rights reserved.</p>
+    <div class="social-links">
+      <a class="social-link" href="#">📸</a>
+      <a class="social-link" href="#">📘</a>
+      <a class="social-link" href="#">🐦</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     CART DRAWER
+══════════════════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Order</h3>
+    <button class="cart-close" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display: none">
+    <div class="cart-total-sub"><span>Subtotal</span><span id="cartSubtotal"></span></div>
+    <div class="cart-total-sub"><span>Taxes (5%)</span><span id="cartTax"></span></div>
+    <div class="cart-total"><span>Total</span><span id="cartTotal"></span></div>
+    <button class="checkout-btn" onclick="checkout()">Checkout · Pay Now →</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TOAST NOTIFICATION
+══════════════════════════════════════════ -->
+<div class="toast" id="toast"></div>
+
+<!-- JavaScript — loaded at end of body for performance -->
+<script src="script.js"></script>
+
+</body>
+</html>
